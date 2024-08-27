@@ -44,5 +44,18 @@ public class Main {
         tasks.add(task);
         System.out.println("Задача добавлена.");
     }
-
+    private static void removeTask(Scanner scanner) {
+        if (tasks.isEmpty()) {
+            System.out.println("Список задач пуст.");
+            return;
+        }
+        System.out.println("Введите номер задачи для удаления:");
+        int index = scanner.nextInt();
+        if (index > 0 && index <= tasks.size()) {
+            tasks.remove(index - 1);
+            System.out.println("Задача удалена.");
+        } else {
+            System.out.println("Неверный номер задачи.");
+        }
+    }
 }
