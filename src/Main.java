@@ -8,11 +8,11 @@ public class Main {
 
     public static void main(String[] args)
     {
-        //loadTasks();
+        loadTasks();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("To-Do List:");
-            //displayTasks();
+            displayTasks();
             System.out.println("Выберите действие:");
             System.out.println("1. Добавить задачу");
             System.out.println("2. Удалить задачу");
@@ -28,7 +28,7 @@ public class Main {
                     removeTask(scanner);
                     break;
                 case 3:
-                    //saveTasks();
+                    saveTasks();
                     scanner.close();
                     return;
                 default:
@@ -78,6 +78,16 @@ public class Main {
             }
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении задач.");
+        }
+    }
+
+    private static void displayTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("Список задач пуст.");
+        } else {
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i));
+            }
         }
     }
 }
