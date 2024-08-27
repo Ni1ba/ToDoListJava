@@ -58,4 +58,26 @@ public class Main {
             System.out.println("Неверный номер задачи.");
         }
     }
+
+    private static void loadTasks() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                tasks.add(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Файл не найден. Создан новый список задач.");
+        }
+    }
+
+    private static void saveTasks() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (String task : tasks) {
+                writer.write(task);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Ошибка при сохранении задач.");
+        }
+    }
 }
