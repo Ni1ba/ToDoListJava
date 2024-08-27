@@ -22,7 +22,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    //addTask();
+                    addTask(scanner);
                     break;
                 case 2:
                     //removeTask();
@@ -38,5 +38,11 @@ public class Main {
 
     }
 
+    private static void addTask(Scanner scanner) {
+        System.out.println("Введите новую задачу:");
+        String task = scanner.nextLine();
+        tasks.add(task);
+        System.out.println("Задача добавлена.");
+    }
 
 }
