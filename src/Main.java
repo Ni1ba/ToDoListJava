@@ -38,5 +38,11 @@ public class Main {
 
     }
 
+    private static void addTask(Scanner scanner) {
+        System.out.println("Введите новую задачу:");
+        String task = scanner.nextLine();
+        tasks.add(task);
+        System.out.println("Задача добавлена.");
+    }
 
 }
