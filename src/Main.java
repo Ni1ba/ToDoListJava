@@ -8,7 +8,33 @@ public class Main {
 
     public static void main(String[] args)
     {
-        System.out.println("Hello world!");
+        //loadTasks();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("To-Do List:");
+            //displayTasks();
+            System.out.println("Выберите действие:");
+            System.out.println("1. Добавить задачу");
+            System.out.println("2. Удалить задачу");
+            System.out.println("3. Выйти");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    //addTask();
+                    break;
+                case 2:
+                    //removeTask();
+                    break;
+                case 3:
+                    //saveTasks();
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Неверный выбор. Попробуйте снова.");
+            }
+        }
 
     }
 
